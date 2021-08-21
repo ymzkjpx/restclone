@@ -3,9 +3,9 @@ package rest.clone.presentation.greeting;
 import org.springframework.web.bind.annotation.*;
 import rest.clone.model.Greeting;
 import rest.clone.model.GreetingRequest;
+import rest.clone.model.Id;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/greeting")
@@ -20,7 +20,7 @@ public class GreetingController {
 
     @GetMapping("konnichiwa")
     Greeting konnichiwa(@RequestParam(value = "name", defaultValue = "chiwa")String name){
-        Greeting greeting = new Greeting(counter.incrementAndGet(),name);
+        Greeting greeting = new Greeting(new Id(counter.incrementAndGet()),name);
         return greeting;
     }
 

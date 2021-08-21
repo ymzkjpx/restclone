@@ -1,15 +1,26 @@
 package rest.clone.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import rest.clone.presentation.configuration.CustomIdentifierSerializer;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Greeting {
-    Integer id;
+    @JsonSerialize(using = CustomIdentifierSerializer.class)
+    Id id;
     String name;
+
+    @Deprecated
+    Greeting() {}
+
+    public Greeting(Id id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Id id() {
+        return id;
+    }
+
+    public String name() {
+        return name;
+    }
 }
