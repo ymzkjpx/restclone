@@ -1,4 +1,4 @@
-package rest.clone.model.model.material.greet;
+package rest.clone.domain.model.material.greet;
 
 public class Name {
     String value;

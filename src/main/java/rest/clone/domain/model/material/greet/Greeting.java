@@ -1,4 +1,4 @@
-package rest.clone.model.model.material.greet;
+package rest.clone.domain.model.material.greet;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import rest.clone.presentation.configuration.CustomIdentifierSerializer;
@@ -6,12 +6,12 @@ import rest.clone.presentation.configuration.CustomIdentifierSerializer;
 public class Greeting {
     @JsonSerialize(using = CustomIdentifierSerializer.class)
     GreetId greetId;
-    String name;
+    Name name;
 
     @Deprecated
     Greeting() {}
 
-    public Greeting(GreetId greetId, String name) {
+    public Greeting(GreetId greetId, Name name) {
         this.greetId = greetId;
         this.name    = name;
     }
@@ -20,7 +20,7 @@ public class Greeting {
         return greetId;
     }
 
-    public String name() {
+    public Name name() {
         return name;
     }
 }

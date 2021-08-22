@@ -15,16 +15,15 @@ public class RestcloneApplication {
     }
 
     @Bean
-    public ObjectMapper directFieldAccess(){
+    public ObjectMapper directFieldAccess() {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setVisibility(objectMapper.getSerializationConfig().getDefaultVisibilityChecker()
-                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
-                .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
-                .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
-                .withCreatorVisibility(JsonAutoDetect.Visibility.NONE)
-        );
+        objectMapper.setVisibility(objectMapper.getSerializationConfig()
+                                               .getDefaultVisibilityChecker()
+                                               .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+                                               .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+                                               .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+                                               .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
         return objectMapper;
-//        return new CustomObjectMapper().ofDirectFieldAccess();
     }
 
 }

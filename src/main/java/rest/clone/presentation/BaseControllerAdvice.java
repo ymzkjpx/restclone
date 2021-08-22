@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 public class BaseControllerAdvice {
 
     @InitBinder
-    public void initBinder(WebDataBinder webDataBinder){
+    public void initBinder(WebDataBinder webDataBinder) {
         webDataBinder.setAllowedFields();
         webDataBinder.initDirectFieldAccess();
         webDataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(false));

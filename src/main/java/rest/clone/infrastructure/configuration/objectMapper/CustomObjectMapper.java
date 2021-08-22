@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import static com.fasterxml.jackson.annotation.PropertyAccessor.*;
 
 public class CustomObjectMapper {
-    public ObjectMapper ofDirectFieldAccess(){
+    public ObjectMapper ofDirectFieldAccess() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(FIELD, JsonAutoDetect.Visibility.ANY);
         mapper.setVisibility(GETTER, JsonAutoDetect.Visibility.NONE);
