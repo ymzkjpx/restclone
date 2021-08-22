@@ -4,15 +4,15 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import rest.clone.model.Id;
+import rest.clone.model.model.material.greet.GreetId;
 
 import java.io.IOException;
 
-public class CustomIdentifierSerializer extends JsonSerializer<Id> {
+public class CustomIdentifierSerializer extends JsonSerializer<GreetId> {
 
     @Override
     public void serialize(
-            Id value,
+            GreetId value,
             JsonGenerator generator,
             SerializerProvider serializerProvider
                          ) throws IOException, JsonProcessingException{

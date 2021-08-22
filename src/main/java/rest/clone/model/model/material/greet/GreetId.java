@@ -1,12 +1,12 @@
-package rest.clone.model;
+package rest.clone.model.model.material.greet;
 
-public class Id {
+public class GreetId {
     Integer value;
 
     @Deprecated
-    Id(){}
+    GreetId(){}
 
-    public Id(Integer value) {
+    public GreetId(Integer value) {
         this.value = value;
     }
 

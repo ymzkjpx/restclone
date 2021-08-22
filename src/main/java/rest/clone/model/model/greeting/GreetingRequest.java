@@ -1,4 +1,4 @@
-package rest.clone.model;
+package rest.clone.model.model.greeting;
 
 public class GreetingRequest {
     String value;
