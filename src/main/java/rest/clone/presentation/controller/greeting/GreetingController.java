@@ -1,36 +1,25 @@
-package rest.clone.presentation.greeting;
+package rest.clone.presentation.controller.greeting;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import rest.clone.application.service.greeting.GreetingService;
-import rest.clone.domain.model.material.greet.Greeting;
-import rest.clone.domain.model.greeting.GreetingRequest;
-import rest.clone.domain.model.material.greet.GreetId;
-import rest.clone.domain.model.material.greet.Name;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+import rest.clone.domain.model.greeting.Greeting;
+import rest.clone.domain.model.greeting.GreetingHistory;
+import rest.clone.presentation.view.model.greeting.GreetingRequest;
+import rest.clone.presentation.view.model.greeting.HistoryResponse;
 
 @RestController
-@RequestMapping("/greeting")
+@RequestMapping("/api/greeting")
 public class GreetingController {
 
     @Autowired
     GreetingService greetingService;
 
-    private final AtomicInteger counter = new AtomicInteger();
 
     @RequestMapping(value = "name", method = RequestMethod.GET)
     String greet(@ModelAttribute GreetingRequest greetingRequest) {
         return "hello";
-    }
-
-    @GetMapping("konnichiwa")
-    Greeting konnichiwa(@RequestParam(value = "name", defaultValue = "konchiwa~") String name) {
-        Greeting greeting = new Greeting(new GreetId(counter.incrementAndGet()), new Name(name));
-        return greeting;
     }
 
     @RequestMapping(value = "chiwa", method = RequestMethod.GET)
@@ -38,5 +27,11 @@ public class GreetingController {
         Greeting greeting = greetingService.generate(greetingRequest);
         greetingService.recordRequest(greeting);
         return greeting;
+    }
+
+    @RequestMapping(value = "history", method = {RequestMethod.GET, RequestMethod.POST})
+    HistoryResponse history() {
+        GreetingHistory greetingHistory = greetingService.history();
+        return HistoryResponse.from(greetingHistory);
     }
 }
