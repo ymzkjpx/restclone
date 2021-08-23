@@ -1,5 +1,10 @@
 package rest.clone.presentation.view.model.tutorial;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class NameRequest {
     String name;
 
