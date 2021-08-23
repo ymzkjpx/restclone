@@ -27,4 +27,5 @@ class TutorialControllerTest {
                // TODO: 2021/08/23 日付フォーマットで比較検証できるようにする.方法が分からなかったので、一旦NULLでない検証に留める.
                .body("now", notNullValue());
     }
+
 }

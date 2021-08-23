@@ -3,8 +3,7 @@ package rest.clone.presentation.controller.tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import rest.clone.application.service.tutorial.TutorialGreetingService;
-import rest.clone.domain.model.material.greet.Name;
-import rest.clone.domain.model.tutorial.NowGreeting;
+import rest.clone.presentation.view.model.tutorial.NameRequest;
 import rest.clone.presentation.view.model.tutorial.NowGreetingResponse;
 
 @RestController
@@ -15,12 +14,12 @@ public class TutorialController {
     TutorialGreetingService tutorialGreetingService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    NowGreetingResponse tutorialGetMethod(@RequestParam(value = "name", defaultValue = "") @ModelAttribute Name name) {
+    NowGreetingResponse tutorialGetMethod(@RequestParam(value = "name", defaultValue = "") @ModelAttribute NameRequest name) {
         return tutorialGreetingService.generateNowGreetingResponse(name.value());
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public NowGreetingResponse tutorialPostMethod(@RequestBody Name name) {
+    public NowGreetingResponse tutorialPostMethod(@RequestBody NameRequest name) {
         return tutorialGreetingService.generateNowGreetingResponse(name.value());
     }
 }

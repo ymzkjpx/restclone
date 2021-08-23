@@ -13,7 +13,10 @@
         <div>
             <h3>まずは使ってみる</h3>
             <ul>
-                <li> <pre><code>http://localhost:8080/api/greeting?name=サトシ</code></pre></li>
+                <li> <pre><code>http://localhost:8080/api/tutorial?name=サトシ</code></pre></li>
+                <li>
+                    <pre><code>curl -X POST --header 'Content-Type: application/json' -d '{"name":"サトシ"}' http://localhost:8080/api/tutorial</code></pre>
+                </li>
                 <li><pre><code>curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"send-to": "message"}' 'http://localhost:8080/api/send'</code></pre></li>
             </ul>
         </div>
