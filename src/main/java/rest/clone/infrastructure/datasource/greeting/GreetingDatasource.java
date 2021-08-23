@@ -8,6 +8,8 @@ import rest.clone.domain.model.material.greet.GreetId;
 import rest.clone.domain.model.material.greet.Greeting;
 import rest.clone.domain.model.material.greet.Name;
 
+import java.util.List;
+
 @Repository
 public class GreetingDatasource implements GreetingRepository {
     @Autowired
@@ -25,4 +27,11 @@ public class GreetingDatasource implements GreetingRepository {
     public void save(Greeting greeting) {
         greetingMapper.register(greeting.id(), greeting.name());
     }
+
+    @Override
+    public List<Greeting> history() {
+         return greetingMapper.history();
+    }
+
+
 }

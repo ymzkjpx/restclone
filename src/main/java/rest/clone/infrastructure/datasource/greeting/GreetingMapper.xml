@@ -10,4 +10,12 @@
         VALUES
             (#{greetId.value}, #{name.value})
     </insert>
+
+    <select id="history" resultType="rest.clone.domain.model.material.greet.Greeting">
+        SELECT
+            gr.request_id AS "greetId.value"
+          , gr.greet_to AS "name.value"
+        FROM
+            greeting.requests gr
+    </select>
 </mapper>
