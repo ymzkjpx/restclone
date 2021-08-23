@@ -1,4 +1,4 @@
-package rest.clone.presentation.greeting;
+package rest.clone.presentation.controller.greeting;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.ObjectMapper;

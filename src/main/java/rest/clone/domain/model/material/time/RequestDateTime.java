@@ -7,28 +7,28 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class RequestDate {
+public class RequestDateTime {
 
     @JsonSerialize(using = LocalDateSerializer.class)
     LocalDateTime value;
 
     @Deprecated
-    RequestDate() {}
+    RequestDateTime() {}
 
-    private RequestDate(LocalDateTime value) {
+    private RequestDateTime(LocalDateTime value) {
         this.value = value;
     }
 
-    public static RequestDate now() {
-        return new RequestDate(LocalDateTime.now());
+    public static RequestDateTime now() {
+        return new RequestDateTime(LocalDateTime.now());
     }
 
-    public static RequestDate from(LocalDate localDate) {
-        return new RequestDate(LocalDateTime.from(localDate));
+    public static RequestDateTime from(LocalDate localDate) {
+        return new RequestDateTime(LocalDateTime.from(localDate));
     }
 
-    public static RequestDate parse(String textDate) {
-        return new RequestDate(LocalDateTime.parse(textDate));
+    public static RequestDateTime parse(String textDate) {
+        return new RequestDateTime(LocalDateTime.parse(textDate));
     }
 
     public LocalDateTime value(){
