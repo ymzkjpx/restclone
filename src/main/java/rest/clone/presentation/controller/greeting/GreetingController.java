@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import rest.clone.application.service.greeting.GreetingService;
-import rest.clone.domain.model.greeting.GreetingRequest;
-import rest.clone.domain.model.material.greet.Greeting;
-
-import java.util.List;
+import rest.clone.domain.model.greeting.Greeting;
+import rest.clone.domain.model.greeting.GreetingHistory;
+import rest.clone.presentation.view.model.greeting.GreetingRequest;
+import rest.clone.presentation.view.model.greeting.HistoryResponse;
 
 @RestController
 @RequestMapping("/api/greeting")
@@ -30,8 +30,8 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "history", method = {RequestMethod.GET, RequestMethod.POST})
-    List<Greeting> history(){
-        List<Greeting> list = greetingService.history();
-        return list;
+    HistoryResponse history() {
+        GreetingHistory greetingHistory = greetingService.history();
+        return HistoryResponse.from(greetingHistory);
     }
 }

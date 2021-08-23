@@ -2,9 +2,9 @@ package rest.clone.infrastructure.datasource.greeting;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import rest.clone.domain.model.material.greet.GreetId;
-import rest.clone.domain.model.material.greet.Greeting;
-import rest.clone.domain.model.material.greet.Name;
+import rest.clone.domain.model.greeting.GreetId;
+import rest.clone.domain.model.greeting.Greeting;
+import rest.clone.domain.model.greeting.Name;
 
 import java.util.List;
 

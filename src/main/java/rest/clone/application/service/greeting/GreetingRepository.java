@@ -1,9 +1,8 @@
 package rest.clone.application.service.greeting;
 
 import org.springframework.stereotype.Repository;
-import rest.clone.domain.model.material.greet.Greeting;
-
-import java.util.List;
+import rest.clone.domain.model.greeting.Greeting;
+import rest.clone.domain.model.greeting.GreetingHistory;
 
 @Repository
 public interface GreetingRepository {
@@ -11,5 +10,5 @@ public interface GreetingRepository {
 
     void save(Greeting greeting);
 
-    List<Greeting> history();
+    GreetingHistory history();
 }

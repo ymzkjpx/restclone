@@ -19,7 +19,7 @@ public class NameRequest {
         return name;
     }
 
-    public String value(){
+    public String value() {
         return name();
     }
 

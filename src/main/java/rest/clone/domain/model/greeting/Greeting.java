@@ -1,10 +1,10 @@
-package rest.clone.domain.model.material.greet;
+package rest.clone.domain.model.greeting;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import rest.clone.presentation.configuration.CustomIdentifierSerializer;
+import rest.clone.presentation.view.model.greeting.configuration.CustomIdSerializer;
 
 public class Greeting {
-    @JsonSerialize(using = CustomIdentifierSerializer.class)
+    @JsonSerialize(using = CustomIdSerializer.class)
     GreetId greetId;
     Name name;
 

@@ -7,11 +7,12 @@ public class NowGreetingResponse {
     String now;
 
     @Deprecated
-    NowGreetingResponse(){}
+    NowGreetingResponse() {}
 
-    public NowGreetingResponse(NowGreeting nowGreeting){
+    public NowGreetingResponse(NowGreeting nowGreeting) {
         this.name = nowGreeting.name();
-        this.now = nowGreeting.now().format();
+        this.now  = nowGreeting.now()
+                               .format();
     }
 
     @Override

@@ -2,10 +2,9 @@ package rest.clone.application.service.greeting;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import rest.clone.domain.model.material.greet.Greeting;
-import rest.clone.domain.model.greeting.GreetingRequest;
-
-import java.util.List;
+import rest.clone.domain.model.greeting.Greeting;
+import rest.clone.domain.model.greeting.GreetingHistory;
+import rest.clone.presentation.view.model.greeting.GreetingRequest;
 
 @Service
 public class GreetingService {
@@ -21,7 +20,7 @@ public class GreetingService {
         greetingRepository.save(greeting);
     }
 
-    public List<Greeting> history() {
+    public GreetingHistory history() {
         return greetingRepository.history();
     }
 }

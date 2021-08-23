@@ -1,4 +1,4 @@
-package rest.clone.domain.model.greeting;
+package rest.clone.presentation.view.model.greeting;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.NonNull;

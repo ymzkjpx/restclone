@@ -1,16 +1,16 @@
-package rest.clone.domain.model.material.greet;
+package rest.clone.domain.model.greeting;
 
 public class Name {
     String value;
 
     @Deprecated
-    Name(){}
+    Name() {}
 
     public Name(String value) {
         this.value = value;
     }
 
-    public String value(){
+    public String value() {
         return value;
     }
 

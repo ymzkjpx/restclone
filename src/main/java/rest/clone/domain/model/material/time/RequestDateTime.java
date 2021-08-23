@@ -31,15 +31,15 @@ public class RequestDateTime {
         return new RequestDateTime(LocalDateTime.parse(textDate));
     }
 
-    public LocalDateTime value(){
+    public LocalDateTime value() {
         return value;
     }
 
-    public String asString(){
+    public String asString() {
         return value.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
     }
 
-    public String format(){
+    public String format() {
         return value.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"));
     }
 

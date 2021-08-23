@@ -1,4 +1,4 @@
-package rest.clone.presentation.view.model.tutorial;
+package rest.clone.presentation.view.model.tutorial.configuration;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

@@ -2,7 +2,7 @@ package rest.clone.domain.model.tutorial;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import rest.clone.domain.model.material.time.RequestDateTime;
-import rest.clone.presentation.view.model.tutorial.CustomRequestDateSerializer;
+import rest.clone.presentation.view.model.tutorial.configuration.CustomRequestDateSerializer;
 
 import java.time.LocalDate;
 
@@ -12,23 +12,23 @@ public class NowGreeting {
     RequestDateTime now = RequestDateTime.now();
 
     @Deprecated
-    NowGreeting(){}
+    NowGreeting() {}
 
-    public NowGreeting(String name){
+    public NowGreeting(String name) {
         this.name = name;
-        this.now = RequestDateTime.now();
+        this.now  = RequestDateTime.now();
     }
 
-    public NowGreeting(String  name, LocalDate localDate) {
+    public NowGreeting(String name, LocalDate localDate) {
         this.name = name;
-        this.now = RequestDateTime.from(localDate);
+        this.now  = RequestDateTime.from(localDate);
     }
 
-    public String name(){
+    public String name() {
         return name;
     }
 
-    public RequestDateTime now(){
+    public RequestDateTime now() {
         return now;
     }
 }

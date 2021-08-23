@@ -1,4 +1,4 @@
-package rest.clone.domain.model.material.greet;
+package rest.clone.domain.model.greeting;
 
 public class GreetId {
     Integer value;
