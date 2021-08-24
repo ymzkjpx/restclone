@@ -14,6 +14,11 @@ sourceSets {
 group = 'rest'
 sourceCompatibility = '11'
 
+wrapper {
+    gradleVersion = '6.9'
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -27,6 +32,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'junit:junit:4.13.1'
     runtimeOnly 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
     testImplementation('com.github.irof:jig-erd:latest.release')
@@ -46,12 +52,16 @@ dependencies {
 
 }
 
-test {
-    useJUnitPlatform()
-}
-
 jig {
     linkPrefix = "https://github.com/system-sekkei/library/tree/master/src/main/java"
 }
+
 [compileJava, processResources]*.shouldRunAfter(clean)
 jigReports.dependsOn(clean, classes)
+
+test {
+    testLogging {
+        events 'started', 'skipped', 'passed', 'failed'
+    }
+    useJUnitPlatform()
+}

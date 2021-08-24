@@ -18,24 +18,6 @@ class GreetingControllerTest {
     MockMvc mockMvc;
 
     @Test
-    public void 名前なしならデフォルト値を返却する() {
-        given().when()
-               .get("/api/greeting")
-               .then()
-               .body("name", equalTo("anonymous"));
-    }
-
-    @Test
-    public void 挨拶した名前を返す() {
-        String name = "有紗";
-        given().when()
-               .get("/api/greeting/chiwa?name=" + name)
-               .then()
-               .body("name", equalTo(name));
-    }
-
-
-    @Test
     public void 挨拶履歴を取得できる() {
         Response response = given().when()
                                    .get("/api/greeting/history")
