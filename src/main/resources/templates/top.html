@@ -12,10 +12,10 @@
         <div>
             <h3>まずは使ってみる</h3>
             <ul>
-                <li>
+                <li>URL欄に入力
                     <pre><code>http://localhost:8080/api/tutorial?name=サトシ</code></pre>
                 </li>
-                <li>
+                <li>ターミナルから実行
                     <pre><code>curl -X POST --header 'Content-Type: application/json' -d '{"name":"サトシ"}' http://localhost:8080/api/tutorial</code></pre>
                 </li>
             </ul>
@@ -24,8 +24,8 @@
         <div>
             <h3>詳細</h3>
             <ul>
-                <li><a href="#">このアプリの概要</a></li>
-                <li><a href="#">Swaggerドキュメント</a></li>
+                <li><a href="#">このアプリの特徴</a></li>
+                <li><a href="#" th:href="@{/swagger-ui.html}">Swaggerドキュメント</a></li>
             </ul>
         </div>
     </main>
