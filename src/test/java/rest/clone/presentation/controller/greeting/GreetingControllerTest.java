@@ -18,6 +18,14 @@ class GreetingControllerTest {
     MockMvc mockMvc;
 
     @Test
+    public void 名前なしならデフォルト値を返却する() {
+        given().when()
+               .get("/api/greeting/hello")
+               .then()
+               .equals("hello");
+    }
+
+    @Test
     public void 挨拶履歴を取得できる() {
         Response response = given().when()
                                    .get("/api/greeting/history")
@@ -25,10 +33,5 @@ class GreetingControllerTest {
                                    .body("list[0].id", equalTo("1"))
                                    .extract()
                                    .response();
-
-        Assertions.assertEquals(3,
-                response.jsonPath()
-                        .getList("list")
-                        .size());
     }
 }

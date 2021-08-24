@@ -24,5 +24,4 @@ public class RestcloneApplication {
                                                .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
         return objectMapper;
     }
-
 }
