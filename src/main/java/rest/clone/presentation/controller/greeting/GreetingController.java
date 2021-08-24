@@ -17,7 +17,7 @@ public class GreetingController {
     GreetingService greetingService;
 
 
-    @RequestMapping(value = "name", method = RequestMethod.GET)
+    @RequestMapping(value = "hello", method = RequestMethod.GET)
     String greet(@ModelAttribute GreetingRequest greetingRequest) {
         return "hello";
     }

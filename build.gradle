@@ -25,20 +25,25 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    runtimeOnly 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
-    testImplementation('com.github.irof:jig-erd:latest.release')
     compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'commons-validator:commons-validator:1.7'
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(group: 'org.junit.vintage')
-    }
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'io.springfox:springfox-bean-validators:2.9.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.4'
+    runtimeOnly 'com.h2database:h2'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    implementation 'org.mybatis:mybatis-typehandlers-jsr310:1.0.2'
+
+    // For test library.
+    testImplementation 'com.github.irof:jig-erd:latest.release'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
     testImplementation 'io.rest-assured:rest-assured:4.4.0'
     testImplementation 'io.rest-assured:json-path:4.4.0'
     testImplementation 'io.rest-assured:json-schema-validator:4.4.0'
@@ -53,5 +58,6 @@ test {
 jig {
     linkPrefix = "https://github.com/system-sekkei/library/tree/master/src/main/java"
 }
+
 [compileJava, processResources]*.shouldRunAfter(clean)
 jigReports.dependsOn(clean, classes)
