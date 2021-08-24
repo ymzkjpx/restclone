@@ -14,6 +14,11 @@ sourceSets {
 group = 'rest'
 sourceCompatibility = '11'
 
+wrapper {
+    gradleVersion = '6.9'
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -51,13 +56,16 @@ dependencies {
 
 }
 
-test {
-    useJUnitPlatform()
-}
-
 jig {
     linkPrefix = "https://github.com/system-sekkei/library/tree/master/src/main/java"
 }
 
 [compileJava, processResources]*.shouldRunAfter(clean)
 jigReports.dependsOn(clean, classes)
+
+test {
+    testLogging {
+        events 'started', 'skipped', 'passed', 'failed'
+    }
+    useJUnitPlatform()
+}
