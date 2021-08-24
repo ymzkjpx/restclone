@@ -20,20 +20,10 @@ class GreetingControllerTest {
     @Test
     public void 名前なしならデフォルト値を返却する() {
         given().when()
-               .get("/api/greeting")
+               .get("/api/greeting/hello")
                .then()
-               .body("name", equalTo("anonymous"));
+               .equals("hello");
     }
-
-    @Test
-    public void 挨拶した名前を返す() {
-        String name = "有紗";
-        given().when()
-               .get("/api/greeting/chiwa?name=" + name)
-               .then()
-               .body("name", equalTo(name));
-    }
-
 
     @Test
     public void 挨拶履歴を取得できる() {
@@ -43,10 +33,5 @@ class GreetingControllerTest {
                                    .body("list[0].id", equalTo("1"))
                                    .extract()
                                    .response();
-
-        Assertions.assertEquals(3,
-                response.jsonPath()
-                        .getList("list")
-                        .size());
     }
 }
