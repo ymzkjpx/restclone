@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS user_accounts, greeting;
+
 DROP SCHEMA if EXISTS greeting;
 CREATE SCHEMA greeting;
 
@@ -11,3 +13,18 @@ CREATE TABLE greeting.requests
     greet_to   VARCHAR(50) NOT NULL DEFAULT 'anonymous',
     created_at TIMESTAMP            DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
+-- Original GreetingAPI
+DROP SEQUENCE IF EXISTS user_id;
+DROP SCHEMA IF EXISTS users CASCADE;
+CREATE SCHEMA users;
+
+CREATE TABLE users.user_accounts
+(
+    user_id Integer PRIMARY KEY
+    , screen_name TEXT NOT NULL
+    , created_at timestamp WITH time ZONE
+);
+
