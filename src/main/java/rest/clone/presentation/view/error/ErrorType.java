@@ -1,23 +1,20 @@
 package rest.clone.presentation.view.error;
 
-import org.apache.ibatis.jdbc.Null;
-import org.springframework.validation.FieldError;
-
 public enum ErrorType {
-    BadRequest("400"),
-    Unauthorized("401"),
-    Forbidden("403"),
-    NotFound("404"),
-    Unknown("500"),
-    FieldError("FieldError");
+    BadRequest(400),
+    Unauthorized(401),
+    Forbidden(403),
+    NotFound(404),
+    Unknown(500),
+    FieldError(null);
 
-    String errorCode;
+    Integer errorCode;
 
-    ErrorType(String errorCode) {
+    ErrorType(Integer errorCode) {
         this.errorCode = errorCode;
     }
 
-    public String errorCode() {
+    public Integer errorCode() {
         return errorCode;
     }
 }
