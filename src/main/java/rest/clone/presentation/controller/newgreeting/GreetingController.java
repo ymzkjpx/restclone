@@ -16,6 +16,6 @@ public class GreetingController {
 
     @RequestMapping(value = "by/username/{id}", method = RequestMethod.GET)
     String byUsername(@PathVariable("id") String id){
-        return id;
+        return
     }
 }
