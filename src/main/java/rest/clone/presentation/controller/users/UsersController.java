@@ -6,11 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import rest.clone.application.service.users.UsersQueryService;
-import rest.clone.domain.model.user.User;
-import rest.clone.presentation.view.model.users.UserResponse;
-
-import java.util.Arrays;
-import java.util.List;
+import rest.clone.domain.model.user.UserIds;
+import rest.clone.presentation.view.model.users.UserIdsRequest;
 
 @RestController
 @RequestMapping("/api/users")
@@ -20,8 +17,8 @@ public class UsersController {
     UsersQueryService usersQueryService;
 
     @RequestMapping(value = "by/username/{id}", method = RequestMethod.GET)
-    List<String> byUsername(@PathVariable("id")String ids ){
-        List<String> list = Arrays.asList(ids.split(","));
-        return list;
+    UserIds byUsername(@PathVariable("id") UserIdsRequest ids ){
+        UserIds userIds = ids.asUserIds();
+        return userIds;
     }
 }
