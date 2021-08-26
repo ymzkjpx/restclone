@@ -5,12 +5,12 @@
 <mapper namespace="rest.clone.infrastructure.datasource.users.UsersMapper">
     <select id="findUsers" resultType="rest.clone.domain.model.user.User">
         SELECT
-        ua.user_id AS "userId.value"
-        , ua.screen_name AS "screenname.value"
+        au.user_id AS "userId.value"
+        , au.screen_name AS "screenname.value"
         FROM
-        users.user_accounts ua
+        account.users au
         WHERE
-        ua.user_id IN
+        au.user_id IN
         <foreach collection="userIds.asList()" item="userId" separator="," open="(" close=")">
             #{userId.value}
         </foreach>
