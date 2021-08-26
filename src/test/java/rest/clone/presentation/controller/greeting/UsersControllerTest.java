@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @GreetingApiTest
 @AutoConfigureMockMvc
-class GreetingControllerTest {
+class UsersControllerTest {
     @Autowired
     MockMvc mockMvc;
 

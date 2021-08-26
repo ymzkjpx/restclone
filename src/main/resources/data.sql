@@ -6,7 +6,7 @@ VALUES
   , (3, 'サトシ');
 
 
--- Original GreetingAPI
+----------------------------- Original GreetingAPI
 INSERT INTO
     users.user_accounts
 (user_id, screen_name)

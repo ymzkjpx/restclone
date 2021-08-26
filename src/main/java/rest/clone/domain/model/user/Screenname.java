@@ -1,11 +1,12 @@
-package rest.clone.application.service.users;
+package rest.clone.domain.model.user;
 
-public class ScreenName {
+public class Screenname {
     String value;
 
-    ScreenName(){}
+    @Deprecated
+    Screenname(){}
 
-    public ScreenName(String value) {
+    public Screenname(String value) {
         this.value = value;
     }
 
