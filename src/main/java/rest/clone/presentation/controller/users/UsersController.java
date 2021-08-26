@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import rest.clone.application.service.users.UsersQueryService;
 import rest.clone.domain.model.user.UserIds;
+import rest.clone.domain.model.user.Users;
 import rest.clone.presentation.view.model.users.UserIdsRequest;
 
 @RestController
@@ -17,8 +18,9 @@ public class UsersController {
     UsersQueryService usersQueryService;
 
     @RequestMapping(value = "by/username/{id}", method = RequestMethod.GET)
-    UserIds byUsername(@PathVariable("id") UserIdsRequest ids ){
+    Users byUsername(@PathVariable("id") UserIdsRequest ids ){
         UserIds userIds = ids.asUserIds();
-        return userIds;
+        Users users = usersQueryService.findUsers(userIds);
+        return users;
     }
 }

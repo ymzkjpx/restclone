@@ -10,6 +10,11 @@ public class UserIds {
     public UserIds(List<UserId> list){
         this.list = list;
     }
+
+    public List<UserId> list(){
+        return list;
+    }
+
     public List<UserId> asList(){
         return list;
     }
