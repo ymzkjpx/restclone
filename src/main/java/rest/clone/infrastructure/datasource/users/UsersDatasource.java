@@ -9,7 +9,6 @@ import rest.clone.domain.model.user.UserIds;
 import rest.clone.domain.model.user.Users;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class UsersDatasource implements UsersRepository {
