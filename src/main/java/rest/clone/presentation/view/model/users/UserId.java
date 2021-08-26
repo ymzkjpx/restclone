@@ -1,4 +1,4 @@
-package rest.clone.application.service.users;
+package rest.clone.presentation.view.model.users;
 
 import lombok.NonNull;
 

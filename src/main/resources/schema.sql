@@ -16,7 +16,7 @@ CREATE TABLE greeting.requests
 
 
 
--- Original GreetingAPI
+----------------------------- Original GreetingAPI
 DROP SEQUENCE IF EXISTS user_id;
 DROP SCHEMA IF EXISTS users CASCADE;
 CREATE SCHEMA users;

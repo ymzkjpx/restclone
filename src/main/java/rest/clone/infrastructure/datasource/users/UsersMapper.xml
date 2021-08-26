@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="rest.clone.infrastructure.datasource.users.UsersMapper">
+    <select id="findUsers" resultType="rest.clone.domain.model.user.User">
+        SELECT
+        ua.user_id AS "userId.value"
+        , ua.screen_name AS "screenname.value"
+        FROM
+        users.user_accounts ua
+        WHERE
+        ua.user_id IN
+        <foreach collection="userIds.asList()" item="userId" separator="," open="(" close=")">
+            #{userId.value}
+        </foreach>
+        LIMIT 100
+    </select>
+</mapper>

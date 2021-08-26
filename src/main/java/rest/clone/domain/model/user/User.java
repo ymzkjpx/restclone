@@ -1,25 +1,24 @@
 package rest.clone.domain.model.user;
 
-import rest.clone.application.service.users.ScreenName;
-import rest.clone.application.service.users.UserId;
+import rest.clone.presentation.view.model.users.UserId;
 
 public class User {
     UserId userId;
-    ScreenName screenName;
+    Screenname screenname;
 
     @Deprecated
-    User(){}
+    User() {}
 
-    public User(Integer userId, ScreenName screenName) {
-        UserId          = userId;
-        this.screenName = screenName;
+    public User(UserId userId, Screenname screenname) {
+        this.userId     = userId;
+        this.screenname = screenname;
     }
 
-    public UserId userId(){
+    public UserId userId() {
         return userId;
     }
 
-    public ScreenName screenName(){
-        return screenName;
+    public Screenname screenName() {
+        return screenname;
     }
 }
